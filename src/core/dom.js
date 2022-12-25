@@ -3,11 +3,14 @@ class Dom {
         this.$el = typeof selector === 'string'
         ? document.querySelector(selector)
         : selector
-    }
+    } 
 
     html(html) {
         if(typeof html === 'string') {
             this.$el.innerHTML = html
+
+            // так мы просто возвращаем экземпляр класса чтобы можно было использовать другие методы (clear)
+            // $('div').html('<span>Test</span>').clear()
             return this
         }
 
@@ -43,5 +46,7 @@ $.create = (tagName, classes = '') => {
     if (classes) {
         el.classList.add(classes)
     }
+    // чтобы использовать методы Dom
+    // помещаем его в Dom $()
     return $(el)
 }
