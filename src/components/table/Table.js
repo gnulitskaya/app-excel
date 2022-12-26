@@ -27,6 +27,8 @@ export class Table extends ExcelComponent {
             $parent.$el.style.width = value + 'px'
             $resizer.$el.style.opacity = '1';
             // $resizer.$el.style.cursor = 'col-resize';
+            document.querySelectorAll(`[data-col="${$parent.data.col}"]`)
+            .forEach(el => el.style.width = value + 'px')
           }
     
           document.onmouseup = () => {
