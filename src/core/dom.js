@@ -60,20 +60,10 @@ class Dom {
         return this.$el.querySelectorAll(selector)
     }
 
-    // {
-    //     height: '200px',
-    //     width: '100px'
-    // }
-    
     css(styles = {}) {
-        // objectLenght = Object.keys(styles).length
-        // for (let i = 0; i < objectLenght; i++) {
-        //     this.$el.styles.styles[i] = 
-        // }
         Object.keys(styles).forEach(key => { 
             this.$el.style[key] = styles[key]
         });
-        // return this.$el.style(selector)
     }
 }
 
